@@ -1,0 +1,14 @@
+div {
+  background-color: blueviolet;
+  color : white;
+  padding : 40px;
+  font-family: 궁서;
+  text-align: center;
+}
+
+h1 {
+  color: white;
+  background-color: aquamarine;
+  padding: 10px;
+  font-family: 궁서;
+}

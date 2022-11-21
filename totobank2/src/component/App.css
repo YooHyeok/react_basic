@@ -1,0 +1,142 @@
+.App {
+  text-align: center;
+}
+
+.main{
+  top:80px;
+  width:100%;
+  height:100%
+}
+
+table{
+  width:1440px;
+}
+
+/*  */
+.nav-items { 
+  list-style:none;
+  margin: 0 auto;
+}
+/*  */
+.nav-item {
+  display: inline-block;
+  height : 80px;
+  padding:0 10px;
+  text-align:center;
+  min-width: 80px;
+  margin:0 10px;
+  line-height: 80px;
+}
+/*  */
+.nav-item>a {
+  font-size: x-small;
+  text-decoration: none;
+  color: darkgray;
+}
+/*  */
+#logo {
+  font-size:large;
+  color : black;
+  margin-right: 100px;
+}
+
+/* Section0 컴포넌트 CSS ---------- */
+/*
+  기본적으로 태그를넣는 순서대로 배치가 된다.
+  블럭태그 - 라인 한줄을 모두 차지하기 때문에 그 다음 라인을 자동으로 바꾼다. (옆으로 배치되는것이 아님)
+  (이미지는 인라인 태그이다.)
+  따라서 차례대로 배치되면 안되고 그림을 바탕에 깔고 글씨 3개가 올라가야하는 상황.
+  어떤것의 위치값을 다른것에 상관없이 명확한 포지션을 절대적으로 받겠다.
+  포지션을 앱솔루트로 가져간다는것은 반드시 top과 left를 준다.
+  top과 left위치에 출력하겠다 라는 의미.
+  절대라는위치는 부모를 기준으로 절대위치를 하겠다.
+  부모를 기준으로 top을 135, left 90 으로 하겠다.
+  부모는 반드시 자식의 포지션을 절대 위치로 지정하기 위해서는
+  부모를 relative로 상대위치로 지정해야한다.
+  z-index는 먼저 넣은게 밑으로 깔리기 때문에 밑으로 깔린것을 위로 올리기위해서 지정.
+  z-index가 높을수록 위로 올라온다
+  하지만 지금은 z-index로 경쟁해야할 태그가 없다.
+*/
+
+/* 상대위치 - 절대위치를 지정할 태그들의 부모태그에 해당 */
+.intro_main {
+  position: relative;
+  z-index: 1; /* 현재 코드 상 없어도됨. */
+}
+/* 텍스트 절대위치 */
+.title_main {
+  position: absolute;
+  top:135px;
+  left: 90px;
+  font-weight: bold;
+  font-size:49px;
+  line-height: 1.4;
+  color: black;
+  text-align: left;
+}
+.title_sub1 {
+  position: absolute;
+  top:290px;
+  left:92px;
+  font-size:16px;
+  line-height:1.95;
+  color:black;
+  opacity: .7;
+  text-align:left;
+}
+.title_sub2 {
+  position: absolute;
+  top:365px;
+  left:92px;
+  font-size:16px;
+  line-height:1.95;
+  color:black;
+  opacity: .7;
+  text-align:left;
+}
+
+/* Section1 컴포넌트 CSS ------------------------------------------- */
+
+.imgBox{
+  margin: 0 auto;
+  align-items: center;
+  padding-left: 20px;
+  padding-right: 20px;
+}
+.textBox{
+  margin: 0 auto;
+  text-align: left;
+  height: 750px;
+  padding-left: 50px;
+  padding-right: 20px;
+  padding-top: 150px;
+}
+.L-text{
+  display: block;
+  font-size: xx-large;
+  font-weight: bold;
+}
+.S-text{
+  display: block;
+  padding-top: 30px;
+  font-size: small;
+  color: darkgray;
+}
+/* Section6 컴포넌트 CSS ------------------------------------------- */
+.componentBox{
+  padding-top: 50px;
+  padding-bottom: 50px;
+  text-align: center;
+  justify-content: center;
+  align-items: center;
+}
+.Hover:hover{
+  background-color: midnightblue;
+  color: white;
+}
+/* .carousel-inner > .carousel-item > img {
+  top: 0;
+  left: 0;
+  width:200px !important;
+  height:315px;
+} */
