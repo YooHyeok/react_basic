@@ -28,7 +28,7 @@ class MakeAccount extends Component {
             , special:false /* 특수계좌여부 */
         }
     }
-
+    /* 모달창 */
     toggle = () => {
         this.setState({modal:!this.state.modal})
     }

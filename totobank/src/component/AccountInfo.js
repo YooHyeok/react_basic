@@ -27,7 +27,7 @@ class AccountInfo extends Component {
             , msg_body:''
         }
     }
-
+    /* 모달창 */
     toggle = () => {
         this.setState({modal:!this.state.modal})
     }
