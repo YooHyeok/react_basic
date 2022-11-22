@@ -51,6 +51,22 @@ class MakeAccount extends Component {
         }
     }
 
+    isExistsById = () => {
+        axios.post("http://localhost:8090/existsid",null,{params:{id:this.state.acc.id}})
+        .then((response) => {
+            console.log("탔어")
+            console.log(response.data);
+            // let msg = '';
+            var msg = response.data == true ? '사용중인 계좌번호 입니다.' : '사용 가능한 계좌번호입니다.';
+            this.setState({msg_header:'계좌 중복 확인', msg_body:msg})
+            this.toggle();
+        }).catch((error) => {
+            console.log(error);
+            this.setState({msg_header:'오류', msg_body:'중복 계좌 확인에 실패했습니다.'})
+            this.toggle();
+        })
+    }
+
     submit = (e) => {
         console.log("submit()")
         console.log(JSON.stringify(this.state.acc))
@@ -61,7 +77,7 @@ class MakeAccount extends Component {
         // */
         // axios.post('http://localhost:8090/makeaccount', null, {acc:JSON.stringify(this.state.acc)}
         axios.post('http://localhost:8090/makeaccount', null, {params:this.state.acc}
-        ).then((response)=>{
+        ).then((response) => {
             this.setState({msg_header:'계좌개설', msg_body:'계좌가 개설되었습니다.'})
             this.toggle();
         }).catch((error)=>{
@@ -86,7 +102,7 @@ class MakeAccount extends Component {
                                         onChange={this.change}/>
                             </Col>
                             <Col sm={3} >
-                                <Button color='primary' style={{width:'100%'}} >중복</Button>
+                                <Button color='primary' style={{width:'100%'}} onClick={this.isExistsById}>중복</Button>
                             </Col>
                         </FormGroup>
                         <FormGroup row>
