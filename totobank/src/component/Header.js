@@ -22,7 +22,7 @@ class Header extends Component {
                         <Link to={'/transfor'}>계좌이체</Link>
                     </li>
                     <li className="nav-item">
-                        <Link to={'/accountInfo'}>계좌조회</Link>
+                        <Link to={'/accountinfo'}>계좌조회</Link>
                     </li>
                 </ul>
             </div>    

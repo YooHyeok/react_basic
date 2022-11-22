@@ -85,8 +85,8 @@ class MakeAccount extends Component {
                                 <Input type='text' name='id' id='id' value={this.state.acc.id} 
                                         onChange={this.change}/>
                             </Col>
-                            <Col>
-                                <Button sm={3} color='primary' style={{width:'100%'}} >중복</Button>
+                            <Col sm={3} >
+                                <Button color='primary' style={{width:'100%'}} >중복</Button>
                             </Col>
                         </FormGroup>
                         <FormGroup row>

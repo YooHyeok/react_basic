@@ -4,6 +4,7 @@ import { Routes, Route} from 'react-router-dom';
 import Header from './Header';
 import Main from './Main';
 import MakeAccount from './MakeAccount';
+import AccountInfo from './AccountInfo';
 
 function App() {
   return (
@@ -12,6 +13,7 @@ function App() {
       <Routes>
         <Route exact path='/' element={<Main/>}/>
         <Route exact path='/makeaccount' element={<MakeAccount/>}/>
+        <Route exact path='/accountinfo' element={<AccountInfo/>}/>
       </Routes>
     </div>
   );
