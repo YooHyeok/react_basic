@@ -30,11 +30,7 @@ class Withdraw extends Component {
 
   submit = (e) => {
     console.log("acc:"+JSON.stringify(this.state.acc));
-    axios.post('http://localhost:8090/withdraw', null, 
-      {
-        params: this.state.acc
-      }
-    )
+    axios.post('http://localhost:8090/withdraw', null, {params: this.state.acc})
     .then((response) => {
       console.log(response);
       this.setState({msg_header:"출금", msg_body:`잔 액 : ${response.data}원`});
