@@ -88,9 +88,7 @@ class AccountInfo extends Component {
                     </FormGroup>
                     <FormGroup row>
                             <Label for='grade' sm={4}>등&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;급</Label>
-                            <Col sm={8}>
-                                <Input type='text' name='grade' id='grade' value={this.state.acc.grade || ''} readOnly/>
-                            </Col>
+                            
                     </FormGroup>
                 </Form>
                 <Modal isOpen={this.state.modal} fade={true} toggle={this.toggle}>
