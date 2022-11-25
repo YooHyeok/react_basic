@@ -3,31 +3,37 @@ import axios from 'axios';
 import './ListBoard.css';
 import {Link} from 'react-router-dom';
 
-function ListBoard() {
+function BoardPage() {
     
     // function에서는 component에서 this.state 로 처리했던것을 set함수로
     // boards라는 변수에 setBoards() 함수를 생성하여 바인딩
     // this.state = {}
     const [boards, setBoards] = useState([]);
-    /* ex)1 setter메소드 */
-    /* 
-    const [id, setId] = useState('');
-    const [name, setName] = useState('');
-    const [balance, setBalance] = useState(0); 
-    */
-   /* ex)2*/
-   /* const[acc, setAcc] = useState({id: '', name: '', balance:0}) */
+    const [pageInfo, setPageInfo] = useState({
+          allPage: 0
+        , curPage: 0
+        , startPage: 0
+        , endPage: 0
+    });
    
    //useEffect : componentDidMount대신 사용. 변경되면서도 사용가능
     useEffect(() => {
-        axios.get("http://localhost:8090/boardlist")
+        serverRequest(1)
+    },[])
+
+    const pageRequest = (e) => {
+        serverRequest(e.target.value);
+    }
+
+    const serverRequest = (page) => {
+        axios.get("http://localhost:8090/boardpage/"+page)
         .then((response) => {
-            setBoards(response.data);
+            setPageInfo(response.data.pageInfo);
+            setBoards(response.data.boards);
         })
         .catch((error) => {
         })
-    },[]) //[] 는 한번만 실행시키기위해 처리
-
+    }
 
     return (
         <>
@@ -52,8 +58,23 @@ function ListBoard() {
                     </tbody>
                 </table>
             </section>
+            <section id="pageList">
+                        {
+                            (() => {
+                                const array = [];
+                                // startpage부터 endpage까지 1씩 증가하면서 반복.
+                                for(let i = pageInfo.startPage; i<= pageInfo.endPage; i++){ 
+                                    // array에 반복해서 push한다.
+                                    array.push(
+                                        <span key={i}><button value={i} onClick={pageRequest}>{i}</button>&nbsp;&nbsp;</span>
+                                    )
+                                }
+                                return array;
+                            })()
+                        }
+            </section>
         </>
     );
 }
 
-export default ListBoard;
+export default BoardPage;

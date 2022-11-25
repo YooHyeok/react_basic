@@ -22,3 +22,9 @@ th, td {
 #commandCell {
     text-align: center;
 }
+
+#pageList {
+    margin: auto;
+    width: 1000px;
+    text-align: center;
+}

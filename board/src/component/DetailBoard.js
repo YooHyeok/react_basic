@@ -68,7 +68,7 @@ function DetailBoard() {
                         </tbody>
                     </table>
                     <section id="commandCell">
-                        <Link to={'/modify/'+id}>수정</Link>
+                        <Link to={'/modify/'+id}>수정</Link> &nbsp;&nbsp;
                         <Link to={'/delete/'+id}>삭제</Link>
                     </section>
                 </form>
