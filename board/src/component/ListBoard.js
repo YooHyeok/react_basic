@@ -7,7 +7,7 @@ function ListBoard() {
     
     // function에서는 component에서 this.state 로 처리했던것을 set함수로
     // boards라는 변수에 setBoards() 함수를 생성하여 바인딩
-    // this.state = {}
+    // this.state = {}z
     const [boards, setBoards] = useState([]);
     /* ex)1 setter메소드 */
     /* 
@@ -43,7 +43,7 @@ function ListBoard() {
                         {boards.map((board) => {
                             return (
                             <tr id='tr_con' key={board.id}>
-                                <td> <Link to={'/detail/'+board.id}>{board.id}</Link></td>
+                                <td><Link to={'/detail/'+board.id}>{board.id}</Link></td>
                                 <td>{board.writer}</td>
                                 <td>{board.subject}</td>
                             </tr>
