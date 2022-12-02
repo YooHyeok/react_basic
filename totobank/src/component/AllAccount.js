@@ -48,7 +48,7 @@ class AllAccount extends Component {
                         {this.state.acc.map((acc) => {
                             console.log(acc);
                             return (
-                            <tr ley={acc.id}>
+                            <tr key={acc.id}>
                                 <td>{acc.id}</td>
                                 <td>{acc.name}</td>
                                 <td>{acc.balance}</td>
