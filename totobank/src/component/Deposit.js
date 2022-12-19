@@ -22,7 +22,7 @@ class Deposit extends Component {
     this.setState({modal : !this.state.modal});
   }
 
-  change = (e) => {
+  constchange = (e) => {
     const name = e.target.name;
     const value = e.target.value;    
     this.setState({acc:{...this.state.acc,  [name] : value}});
